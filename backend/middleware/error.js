@@ -42,7 +42,7 @@ const sendErrorDev = (err, req, res) => {
                 stack:err.stack
             })
     }
-     console.error(error)
+     console.error(err)
      return res.status(500).json({
          status:'error',
          message:'Something went wrong!'
@@ -62,7 +62,7 @@ const sendErrorProd = (err, req, res) => {
             })
         }
     }
-     console.error(error)
+     console.error(err)
      return res.status(500).json({
          status:'error',
          message:'Something went wrong!'
