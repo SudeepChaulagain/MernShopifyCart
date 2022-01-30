@@ -19,7 +19,7 @@ const ProductScreen = () => {
 
   const {productState, dispatch} = useProductContext()
 
-  const {cart, dispatch:cartDispatch} = useCartContext()
+  const { dispatch:cartDispatch} = useCartContext()
 
   const {product, isLoading, error} = productState
 

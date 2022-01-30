@@ -39,7 +39,7 @@ const createSendToken = (user, statusCode, req, res) => {
 
 export const login = catchAsync(async (req, res, next) =>{
 
-    const {email, password} = req.body
+       const {email, password} = req.body
     
         const existingUser = await User.findOne({email})
 

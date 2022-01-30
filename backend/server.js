@@ -17,10 +17,14 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 
-// const csrfProtection = csrf({
-//     cookie:true
-// })
-// app.use(csrfProtection)
+const csrfProtection = csrf({
+    cookie:true
+})
+app.use(csrfProtection)
+
+app.get('/api/csrf-token', (req,res) => {
+    res.json({csrfToken: req.csrfToken()})
+})
 
 app.use('/api/products', productRoutes)
 app.use('/api/auth', authRoutes)
